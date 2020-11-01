@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package mylib.echo.protobuf.msg;
+
+message Ping {
+  Payload payload = 1;
+  string reply_to = 2;
+}
+
+message Pong {
+  Payload payload = 1;
+}
+
+message Payload {
+  int32 serializer_id = 1;
+  string manifest = 2;
+  bytes message = 3;
+}
