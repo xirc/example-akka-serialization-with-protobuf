@@ -3,6 +3,7 @@ version := "0.1"
 scalaVersion := "2.13.3"
 
 val AkkaVersion = "2.6.10"
+val AkkaHttpVersion = "10.2.1"
 
 lazy val mylib = (project in file("mylib"))
   .settings(
@@ -19,3 +20,10 @@ lazy val mylib = (project in file("mylib"))
 lazy val myapp = (project in file("myapp"))
   .disablePlugins(ProtocPlugin)
   .dependsOn(mylib)
+  .settings(
+    libraryDependencies ++= Seq(
+      "ch.qos.logback" % "logback-classic" % "1.2.3",
+      "com.typesafe.akka" %% "akka-stream-typed" % AkkaVersion,
+      "com.typesafe.akka" %% "akka-http" % AkkaHttpVersion,
+    ),
+  )
