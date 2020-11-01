@@ -7,7 +7,7 @@ import akka.serialization.{
   BaseSerializer,
   SerializationExtension,
   SerializerWithStringManifest,
-  Serializers
+  Serializers,
 }
 import akka.util.ByteIterator.ByteArrayIterator
 import com.google.protobuf.ByteString
@@ -26,14 +26,14 @@ final class SampleMessagesSerializer(val system: ExtendedActorSystem)
 
   private val fromBinaryMap = Map[String, Array[Byte] => SampleMessages](
     MessageWithPrimitiveManifest -> messageWithPrimitiveFromBinary,
-    MessageWithAnyManifest -> messageWithAnyFromBinary
+    MessageWithAnyManifest -> messageWithAnyFromBinary,
   )
 
   override def manifest(o: AnyRef): String = o match {
     case m: SampleMessages => sampleMessageManifest(m)
     case _ =>
       throw new IllegalArgumentException(
-        s"Can't serialize object of type ${o.getClass} in [${getClass.getName}]"
+        s"Can't serialize object of type ${o.getClass} in [${getClass.getName}]",
       )
   }
 
@@ -41,7 +41,7 @@ final class SampleMessagesSerializer(val system: ExtendedActorSystem)
     case m: SampleMessages => sampleMessageToBinary(m)
     case _ =>
       throw new IllegalArgumentException(
-        s"Can't serialize object of type ${o.getClass} in [${getClass.getName}]"
+        s"Can't serialize object of type ${o.getClass} in [${getClass.getName}]",
       )
   }
 
@@ -51,7 +51,7 @@ final class SampleMessagesSerializer(val system: ExtendedActorSystem)
         fromBinary(bytes)
       case None =>
         throw new NotSerializableException(
-          s"Unimplemented deserialization of message with manifest [$manifest] in [${getClass.getName}]"
+          s"Unimplemented deserialization of message with manifest [$manifest] in [${getClass.getName}]",
         )
     }
   }
@@ -69,7 +69,7 @@ final class SampleMessagesSerializer(val system: ExtendedActorSystem)
   }
 
   private def messageWithPrimitiveToProto(
-      message: MessageWithPrimitive
+      message: MessageWithPrimitive,
   ): msg.MessageWithPrimitive = {
     msg.MessageWithPrimitive(message.id, message.message)
   }
@@ -99,7 +99,7 @@ final class SampleMessagesSerializer(val system: ExtendedActorSystem)
     msg.Payload(
       serializerId = messageSerializer.identifier,
       manifest = messageManifest,
-      message = ByteString.copyFrom(messagePayload)
+      message = ByteString.copyFrom(messagePayload),
     )
   }
 
@@ -108,7 +108,7 @@ final class SampleMessagesSerializer(val system: ExtendedActorSystem)
       .deserialize(
         payload.message.toByteArray,
         payload.serializerId,
-        payload.manifest
+        payload.manifest,
       )
       .get
   }
