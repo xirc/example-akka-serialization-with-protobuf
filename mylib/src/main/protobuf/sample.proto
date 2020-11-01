@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package mylib.sample.protobuf.msg;
+
+message MessageWithPrimitive {
+  int64 id = 1;
+  string message = 2;
+}
+
+message MessageWithAny {
+  Payload payload = 1;
+}
+
+message MessageWithTyped {
+  Payload payload = 1;
+}
+
+message Payload {
+  int32 serializer_id = 1;
+  string manifest = 2;
+  bytes message = 3;
+}
