@@ -27,3 +27,14 @@ lazy val myapp = (project in file("myapp"))
       "com.typesafe.akka" %% "akka-http" % AkkaHttpVersion,
     ),
   )
+
+addCommandAlias(
+  "ciCheck",
+  Seq(
+    "clean",
+    "scalafmtSbtCheck",
+    "scalafmtCheckAll",
+    "test:compile",
+    "test",
+  ).mkString(";"),
+)

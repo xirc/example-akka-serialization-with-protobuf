@@ -7,7 +7,7 @@ import mylib.sample.SampleMessages.{MessageWithAny, MessageWithPrimitive}
 final class SampleMessagesSerializerSpec extends SpecBase {
 
   private val serializer = new SampleMessagesSerializer(
-    system.classicSystem.asInstanceOf[ExtendedActorSystem]
+    system.classicSystem.asInstanceOf[ExtendedActorSystem],
   )
 
   private def checkSerialization(obj: AnyRef): Unit = {
