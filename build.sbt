@@ -10,7 +10,7 @@ lazy val mylib = (project in file("mylib"))
     libraryDependencies ++= Seq(
       "com.typesafe.akka" %% "akka-actor-typed" % AkkaVersion,
       "com.typesafe.akka" %% "akka-actor-testkit-typed" % AkkaVersion % Test,
-      "org.scalatest" %% "scalatest" % "3.2.2" % Test,
+      "org.scalatest" %% "scalatest" % "3.2.5" % Test,
     ),
     PB.targets in Compile := Seq(
       scalapb.gen(flatPackage = true) -> (sourceManaged in Compile).value / "scalapb",
