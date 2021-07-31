@@ -3,7 +3,7 @@ version := "0.1"
 scalaVersion := "2.13.3"
 
 val AkkaVersion = "2.6.15"
-val AkkaHttpVersion = "10.2.4"
+val AkkaHttpVersion = "10.2.5"
 
 lazy val mylib = (project in file("mylib"))
   .settings(
