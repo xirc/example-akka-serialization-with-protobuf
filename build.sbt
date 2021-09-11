@@ -22,7 +22,7 @@ lazy val myapp = (project in file("myapp"))
   .dependsOn(mylib)
   .settings(
     libraryDependencies ++= Seq(
-      "ch.qos.logback" % "logback-classic" % "1.2.5",
+      "ch.qos.logback" % "logback-classic" % "1.2.6",
       "com.typesafe.akka" %% "akka-stream-typed" % AkkaVersion,
       "com.typesafe.akka" %% "akka-http" % AkkaHttpVersion,
     ),
