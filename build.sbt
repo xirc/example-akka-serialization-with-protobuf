@@ -1,6 +1,6 @@
 name := "example-akka-serialization-with-protobuf"
 version := "0.1"
-scalaVersion := "2.13.6"
+scalaVersion := "2.13.7"
 
 val AkkaVersion = "2.6.17"
 val AkkaHttpVersion = "10.2.7"
