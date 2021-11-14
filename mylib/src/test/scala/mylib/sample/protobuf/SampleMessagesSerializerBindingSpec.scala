@@ -1,6 +1,6 @@
 package mylib.sample.protobuf
 
-import akka.serialization.{SerializationExtension, Serializer}
+import akka.serialization.SerializationExtension
 import mylib.SpecBase
 import mylib.sample.SampleMessages
 import mylib.sample.SampleMessages.{MessageWithAny, MessageWithPrimitive}

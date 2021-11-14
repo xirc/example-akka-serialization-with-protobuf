@@ -1,7 +1,6 @@
 package mylib.echo.protobuf
 
 import akka.actor.ExtendedActorSystem
-import akka.actor.typed.scaladsl.Behaviors
 import mylib.SpecBase
 import mylib.echo.Echo
 
