@@ -1,7 +1,6 @@
 package mylib.echo.protobuf
 
 import akka.actor.ExtendedActorSystem
-import akka.actor.typed.scaladsl.Behaviors
 import mylib.SpecBase
 import mylib.echo.Echo
 
@@ -17,8 +16,8 @@ final class EchoMessagesSerializerSpec extends SpecBase {
     ref should ===(obj)
   }
 
-  private val probe1 = testKit.createTestProbe[Echo.Pong[Int]]
-  private val probe2 = testKit.createTestProbe[Echo.Pong[String]]
+  private val probe1 = testKit.createTestProbe[Echo.Pong[Int]]()
+  private val probe2 = testKit.createTestProbe[Echo.Pong[String]]()
 
   "EchoMessages" should {
     "be serializable" in {

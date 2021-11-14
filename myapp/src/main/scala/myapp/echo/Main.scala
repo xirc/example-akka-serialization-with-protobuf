@@ -1,7 +1,6 @@
 package myapp.echo
 
 import akka.actor.typed.scaladsl.AskPattern.{Askable, schedulerFromActorSystem}
-import akka.actor.typed.scaladsl.Behaviors
 import akka.actor.typed.{ActorSystem, Behavior}
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.model.StatusCodes
@@ -12,7 +11,6 @@ import akka.util.Timeout
 import mylib.echo.Echo
 
 import scala.concurrent.duration.DurationInt
-import scala.util.Random
 
 object Main extends App {
 

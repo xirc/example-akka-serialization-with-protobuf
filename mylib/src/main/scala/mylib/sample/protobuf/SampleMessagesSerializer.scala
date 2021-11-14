@@ -1,7 +1,5 @@
 package mylib.sample.protobuf
 
-import java.io.NotSerializableException
-
 import akka.actor.ExtendedActorSystem
 import akka.serialization.{
   BaseSerializer,
@@ -9,10 +7,11 @@ import akka.serialization.{
   SerializerWithStringManifest,
   Serializers,
 }
-import akka.util.ByteIterator.ByteArrayIterator
 import com.google.protobuf.ByteString
 import mylib.sample.SampleMessages
 import mylib.sample.SampleMessages.{MessageWithAny, MessageWithPrimitive}
+
+import java.io.NotSerializableException
 
 final class SampleMessagesSerializer(val system: ExtendedActorSystem)
     extends SerializerWithStringManifest
@@ -22,7 +21,6 @@ final class SampleMessagesSerializer(val system: ExtendedActorSystem)
 
   private val MessageWithPrimitiveManifest = "A"
   private val MessageWithAnyManifest = "B"
-  private val MessageWithTypedManifest = "C"
 
   private val fromBinaryMap = Map[String, Array[Byte] => SampleMessages](
     MessageWithPrimitiveManifest -> messageWithPrimitiveFromBinary,
