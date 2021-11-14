@@ -1,6 +1,14 @@
 name := "example-akka-serialization-with-protobuf"
 version := "0.1"
 scalaVersion := "2.13.7"
+ThisBuild / scalacOptions := Seq(
+  "-encoding",
+  "utf8",
+  "-deprecation",
+  "unchecked",
+  "-feature",
+  "-Xlint",
+)
 
 val AkkaVersion = "2.6.17"
 val AkkaHttpVersion = "10.2.7"
