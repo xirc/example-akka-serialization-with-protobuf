@@ -51,7 +51,7 @@ addCommandAlias(
     "clean",
     "scalafmtSbtCheck",
     "scalafmtCheckAll",
-    "test:compile",
+    "Test/compile",
     "test",
   ).mkString(";"),
 )
