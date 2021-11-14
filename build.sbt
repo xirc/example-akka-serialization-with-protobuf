@@ -7,6 +7,7 @@ ThisBuild / scalacOptions := Seq(
   "unchecked",
   "-feature",
   "-Xlint",
+  "-Xsource:3",
 )
 
 lazy val AkkaVersion = "2.6.17"
