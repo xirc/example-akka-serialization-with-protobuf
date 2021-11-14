@@ -39,6 +39,14 @@ lazy val myapp = (project in file("myapp"))
   )
 
 addCommandAlias(
+  "ciFormat",
+  Seq(
+    "scalafmtSbt",
+    "scalafmtAll",
+  ).mkString(";"),
+)
+
+addCommandAlias(
   "ciCheck",
   Seq(
     "clean",
