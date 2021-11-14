@@ -21,7 +21,6 @@ final class SampleMessagesSerializer(val system: ExtendedActorSystem)
 
   private val MessageWithPrimitiveManifest = "A"
   private val MessageWithAnyManifest = "B"
-  private val MessageWithTypedManifest = "C"
 
   private val fromBinaryMap = Map[String, Array[Byte] => SampleMessages](
     MessageWithPrimitiveManifest -> messageWithPrimitiveFromBinary,
