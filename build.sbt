@@ -22,8 +22,8 @@ lazy val mylib = (project in file("mylib"))
       "com.typesafe.akka" %% "akka-actor-testkit-typed" % AkkaVersion % Test,
       "org.scalatest" %% "scalatest" % ScalaTestVersion % Test,
     ),
-    PB.targets in Compile := Seq(
-      scalapb.gen(flatPackage = true) -> (sourceManaged in Compile).value / "scalapb",
+    Compile / PB.targets := Seq(
+      scalapb.gen(flatPackage = true) -> (Compile / sourceManaged).value / "scalapb",
     ),
   )
 
