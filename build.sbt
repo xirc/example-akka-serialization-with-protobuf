@@ -10,9 +10,9 @@ ThisBuild / scalacOptions := Seq(
   "-Xsource:3",
 )
 
-lazy val AkkaVersion = "2.6.17"
+lazy val AkkaVersion = "2.6.18"
 lazy val AkkaHttpVersion = "10.2.7"
-lazy val LogbackVersion = "1.2.9"
+lazy val LogbackVersion = "1.2.10"
 lazy val ScalaTestVersion = "3.2.10"
 
 lazy val mylib = (project in file("mylib"))
