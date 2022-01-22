@@ -1,5 +1,5 @@
 name := "example-akka-serialization-with-protobuf"
-ThisBuild / scalaVersion := "2.13.7"
+ThisBuild / scalaVersion := "2.13.8"
 ThisBuild / scalacOptions := Seq(
   "-encoding",
   "utf8",
