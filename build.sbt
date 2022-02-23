@@ -11,7 +11,7 @@ ThisBuild / scalacOptions := Seq(
 )
 
 lazy val AkkaVersion = "2.6.18"
-lazy val AkkaHttpVersion = "10.2.7"
+lazy val AkkaHttpVersion = "10.2.8"
 lazy val LogbackVersion = "1.2.10"
 lazy val ScalaTestVersion = "3.2.11"
 
