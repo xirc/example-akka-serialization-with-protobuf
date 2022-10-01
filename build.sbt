@@ -13,7 +13,7 @@ ThisBuild / scalacOptions := Seq(
 lazy val AkkaVersion = "2.6.20"
 lazy val AkkaHttpVersion = "10.2.10"
 lazy val LogbackVersion = "1.4.1"
-lazy val ScalaTestVersion = "3.2.13"
+lazy val ScalaTestVersion = "3.2.14"
 
 lazy val mylib = (project in file("mylib"))
   .settings(
